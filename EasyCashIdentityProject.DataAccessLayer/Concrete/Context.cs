@@ -11,6 +11,7 @@ namespace EasyCashIdentityProject.DataAccessLayer.Concrete
 {
     //IdentityDbContext override AppUser,AppRole, vs. burada override yapabiliyoruz
     //public class Context:IdentityDbContext<AppUser,AppRole,int>
+    //
     public class Context: IdentityDbContext<AppUser, AppRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
