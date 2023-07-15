@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 
 namespace EasyCashIdentityProject.DataAccessLayer.Concrete
 {
-    public class Context:IdentityDbContext
+    //IdentityDbContext override AppUser,AppRole, vs. burada override yapabiliyoruz
+    //public class Context:IdentityDbContext<AppUser,AppRole,int>
+    public class Context: IdentityDbContext<AppUser, AppRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -17,5 +19,6 @@ namespace EasyCashIdentityProject.DataAccessLayer.Concrete
         }
         public DbSet <CustomerAccount> CustomerAccounts { get; set; }
         public DbSet <CustomerAccountProcess> CustomerAccountProcesses { get; set; }
+
     }
 }
